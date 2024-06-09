@@ -11,7 +11,7 @@ import time
 import threading
 
 # MongoDB Atlas connection details
-MONGO_URI = "mongodb+srv://kenny:whisperlistener@cluster0-shard-00-00-example.com:27017"
+MONGO_URI = #enter your MongoDB Atlas URI here
 
 # Chat room settings
 CHAT_ROOM = "PRIVATE CHAT"
