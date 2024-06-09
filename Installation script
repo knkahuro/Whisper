@@ -1,0 +1,37 @@
+**Installation Script**
+
+**Step 1: Install Required Packages**
+
+* `pip install pymongo cryptography`
+
+**Step 2: Create a New Python File**
+
+* Create a new file named `whisper.py` and copy the provided Python code into it.
+
+**Step 3: Configure MongoDB Atlas**
+
+* Replace the `MONGO_URI` variable with your own MongoDB Atlas connection string.
+* Make sure to replace `<username>` and `<password>` with your actual MongoDB Atlas credentials.
+
+**Step 4: Run the Chat App**
+
+* Run the `whisper.py file using Python: `python whisper.py`
+* Follow the prompts to enter your codename and password.
+
+**Step 5: Join a Chat Room**
+
+* Once connected, you can join a chat room by calling the `join_chat_room` function.
+* Follow the prompts to enter the chat room name and your username.
+
+**Step 6: Send and Receive Messages**
+
+* Once in a chat room, you can send messages using the `send_message` function.
+* The `message_listener` function will continuously check for new messages and display them in the chat room.
+
+**Step 7: Leave the Chat Room**
+
+* When you're ready to leave the chat room, call the `leave_chat_room` function.
+* This will remove you from the chat room and delete any messages if you're the last user.
+
+That's it! You should now have a working chat app using Python and MongoDB Atlas.
+Enjoy and dream on big🎴.
