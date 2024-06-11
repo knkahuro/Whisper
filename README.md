@@ -38,7 +38,7 @@ The chat is ephemeral, meaning all messages are automatically deleted when the c
 3. *Project Setup*:
    - Download encrypted_chat.py, setup_chat.sh (macOS/Linux), and setup_chat.bat (Windows).
    - Place all files in the same directory.
-   - Open encrypted_chat.py and replace "your_mongodb_atlas_uri_here" with your connection string.
+   - Open encrypted_chat.py and replace "your_mongodb_atlas_uri_here" with your connection string
 
 4. *Install Dependencies*:
    - On macOS/Linux:
@@ -55,14 +55,14 @@ The chat is ephemeral, meaning all messages are automatically deleted when the c
 3. Run the chat application:
 4. When prompted, enter:
 - A username (e.g., "Alice" in one terminal, "Bob" in the other)
-- The MongoDB user password you created
+- Enter a common passcode between you two
 
 5. Start chatting:
 - Type your message and press Enter to send.
 - Messages appear instantly in the other user's terminal.
 
 6. To end the chat:
-- Type exit and press Enter in either terminal.
+- Type */exit* and press Enter in either terminal.
 - When both users exit, all messages are permanently deleted.
 
 ## Important Notes
@@ -103,4 +103,5 @@ This project is open-source and available under the MIT License.
 
 ---
 
-Enjoy your secure, ephemeral chats! Remember, in the world of this application, what happens in chat, stays in chat... and then vanishes forever! 🕵‍♂💬🔒
+Enjoy your secure, ephemeral chats! 
+...Remember, in the world of this application, what happens in chat, stays in chat... and then vanishes forever! 🕵‍♂💬🔒
