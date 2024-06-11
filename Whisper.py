@@ -1,6 +1,5 @@
-#🎴kenny
+ #🎴kenny
 #06/08/2024
-
 import base64
 from cryptography.fernet import Fernet
 from pymongo import MongoClient
@@ -18,7 +17,7 @@ MAX_CLIENTS = 2  # Maximum number of clients allowed in a chat room
 # Function to get user credentials
 def get_credentials():
     username = input("Enter your codename: ")
-    passcode = getpass("Enter the chatroom passcode: ")
+    passcode = input("Enter the chatroom passcode: ")
     return username, passcode
 
 # Function to connect to MongoDB Atlas
@@ -73,22 +72,22 @@ def send_message(collection, username, message, chat_room, key):
         "encrypted_message": encrypted_message
     }
     collection.update_one({"_id": chat_room}, {"$push": {"messages": message_data}})
-    print(f"[{timestamp}] {username}: {message}")
 
 # Function to retrieve and display new messages
-def get_new_messages(collection, chat_room, last_index, key):
+def get_new_messages(collection, chat_room, last_index, key, username):
     room_info = collection.find_one({"_id": chat_room})
     messages = room_info["messages"][last_index:]
     for msg in messages:
-        decrypted_message = decrypt_message(key, msg['encrypted_message'])
-        print(f"[{msg['timestamp']}] {msg['username']}: {decrypted_message}")
+        if msg["username"] != username:
+            decrypted_message = decrypt_message(key, msg['encrypted_message'])
+            print(f"[{msg['timestamp']}] {msg['username']}: {decrypted_message}")
     return len(room_info["messages"])
 
 # Function to continuously check for new messages
 def message_listener(collection, username, chat_room, key):
     last_index = 0
     while True:
-        last_index = get_new_messages(collection, chat_room, last_index, key)
+        last_index = get_new_messages(collection, chat_room, last_index, key, username)
         time.sleep(1)  # Check for new messages every second
 
 # Function to leave the chat room and cleanup
